@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3},{"content":"pool-2-thread-4","id":4},{"content":"pool-2-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/features\/delete_user[1:9]","start":1747657114832,"end":1747657116790,"title":"examples\/features\/delete_user[1:9] 08:18:34.832-08:18:36.790 Codigo de la respuesta 204"},{"id":2,"group":2,"content":"examples\/features\/delete_user[2:14]","start":1747657114832,"end":1747657116833,"title":"examples\/features\/delete_user[2:14] 08:18:34.832-08:18:36.833 Contenido de la respuesta vacia"},{"id":3,"group":3,"content":"examples\/features\/delete_user[3:19]","start":1747657114832,"end":1747657116802,"title":"examples\/features\/delete_user[3:19] 08:18:34.832-08:18:36.802 Tiempo limite de la respuesta"},{"id":4,"group":4,"content":"examples\/features\/get_user[1:9]","start":1747657114832,"end":1747657116861,"title":"examples\/features\/get_user[1:9] 08:18:34.832-08:18:36.861 Conseguir lista de usuarios"},{"id":5,"group":5,"content":"examples\/features\/get_user[2:18]","start":1747657114832,"end":1747657116859,"title":"examples\/features\/get_user[2:18] 08:18:34.832-08:18:36.859 Conseguir estructura de la lista de usuarios"},{"id":6,"group":1,"content":"examples\/features\/get_user[3:43]","start":1747657116812,"end":1747657117541,"title":"examples\/features\/get_user[3:43] 08:18:36.812-08:18:37.541 Conseguir un usuario"},{"id":7,"group":3,"content":"examples\/features\/patch_user[1:9]","start":1747657116815,"end":1747657117654,"title":"examples\/features\/patch_user[1:9] 08:18:36.815-08:18:37.654 Estado de respuesta Ok"},{"id":8,"group":2,"content":"examples\/features\/patch_user[2:22]","start":1747657116844,"end":1747657117656,"title":"examples\/features\/patch_user[2:22] 08:18:36.844-08:18:37.656 Estructura de la respuesta correcta"},{"id":9,"group":5,"content":"examples\/features\/patch_user[3:41]","start":1747657116870,"end":1747657117650,"title":"examples\/features\/patch_user[3:41] 08:18:36.870-08:18:37.650 Contenido de la respuesta correcta"},{"id":10,"group":4,"content":"examples\/features\/put_user[1:9]","start":1747657116906,"end":1747657117657,"title":"examples\/features\/put_user[1:9] 08:18:36.906-08:18:37.657 Estado de respuesta Ok"},{"id":11,"group":1,"content":"examples\/features\/put_user[2:22]","start":1747657117547,"end":1747657118203,"title":"examples\/features\/put_user[2:22] 08:18:37.547-08:18:38.203 Estructura de la respuesta correcta"},{"id":12,"group":5,"content":"examples\/features\/put_user[3:41]","start":1747657117657,"end":1747657118300,"title":"examples\/features\/put_user[3:41] 08:18:37.657-08:18:38.300 Contenido de la respuesta correcta"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
